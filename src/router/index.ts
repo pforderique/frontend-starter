@@ -4,6 +4,7 @@ import { useUserStore } from '@/stores/user'
 import HomeView from '../views/HomeView.vue'
 import SettingView from '../views/SettingView.vue'
 import LoginView from '../views/LoginView.vue'
+import NotFound from '../views/NotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +23,12 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView
-    }
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'Not Found',
+      component: NotFound
+    },
   ]
 })
 
